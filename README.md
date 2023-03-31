@@ -1,10 +1,10 @@
 # Linces Entregable 1 UX
 ## Personas
 
-Mariel Sofía Gutiérrez Zapién 195525
-Mariana Zapata Covarrubias 195111
-Santiago Flores Larrondo 196864
-Ángel Enrique Alvarado Ramos 197341
+Mariel Sofía Gutiérrez Zapién 195525 <br>
+Mariana Zapata Covarrubias 195111 <br>
+Santiago Flores Larrondo 196864 <br>
+Ángel Enrique Alvarado Ramos 197341 <br>
 
 | Abogadas  |   Estudiantes      |  
 |----------|:-------------:|
