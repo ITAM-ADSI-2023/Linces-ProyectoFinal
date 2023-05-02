@@ -10,6 +10,9 @@
   .extra {
     margin: 1px;
   }
+  .divBotonesPrincipal{
+    margin: 10px;
+  }
   body{
     font-family: sans-serif;
     text-align: center;
@@ -22,6 +25,20 @@
   img{
     width: 150px;
     height: 150px;
+  }
+  button{
+    background-color: #006D5B;
+    border: none;
+    color: white;
+    padding: 10px 25px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 4px;
+  }
+  br{
+    line-height: 200%;
   }
   .button {
     background-color: #006D5B;
@@ -56,7 +73,7 @@
     display: inline-block;
   }
   h1 {
-    font-size: 50px;
+    font-size: 40px;
     font-weight: 300;
     color: darkslategray;
   }
