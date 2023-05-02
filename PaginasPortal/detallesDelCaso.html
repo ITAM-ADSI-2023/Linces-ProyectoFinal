@@ -15,10 +15,10 @@
     <p>En esta seccion se describe el caso en cuestion.</p>
 
     <label for="nombre-caso">Nombre del caso:</label>
-    <input type="text" id="nombre-caso" name="nombre-caso">
+    <input type="text" id="txtNombreCasoDetalles" name="nombre-caso">
 
     <label for="estatus-caso">Estatus del caso:</label>
-    <select id="estatus-caso" name="estatus-caso">
+    <select id="ddEstatusCAaso" name="estatus-caso">
       <option value="pendiente">Pendiente</option>
       <option value="en-proceso">En proceso</option>
       <option value="finalizado">Finalizado</option>
@@ -27,16 +27,16 @@
     <div>
       <a href="#">Versiones finales         </a>
       <a href="#">Borrador y correcciones           </a>
-      <a href="#">Información del caso          </a>
+      <a href="#">Informacion del caso          </a>
     </div>
 
-    <button type="button">Regresar al portal</button>
-    <button type="button">Agregar tarea</button>
+    <button type="button" id="btRegresaPortal" >Regresar al portal</button>
+    <button type="button" id="btAgregaTarea" >Agregar tarea</button>
 
     <table>
       <thead>
         <tr>
-          <th>Título de la tarea</th>
+          <th>Titulo de la tarea</th>
           <th>Asignado a</th>
           <th>Fecha de entrega</th>
           <th>Estatus</th>
