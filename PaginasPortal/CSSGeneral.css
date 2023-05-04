@@ -16,6 +16,12 @@
   .divCerrarSesion{
     margin-top: 100px;
   }
+  .divLista{
+    margin: auto;
+    width: 50%;
+    align-items: center;
+    display: flex;
+  }
   body{
     font-family: sans-serif;
     text-align: center;
@@ -25,7 +31,7 @@
     background-color: #f5f5f5;
   }
   .div_header{
-    margin-bottom: 100px;
+    margin-bottom: 80px;
   }
   img{
     width: 150px;
@@ -99,4 +105,23 @@
     font-size: 40px;
     font-weight: 300;
     color: darkslategray;
+  }
+  h2 {
+    font-size: 35px;
+    font-weight: 300;
+    color: black;
+  }
+  ul{
+    background: #006D5B;
+    padding: 15px;
+    width: 500px;
+    border-radius: 4px;
+    margin: auto;
+  }
+  ul li {
+    background: #c1e6d6;
+    color: black;
+    margin: 5px;
+    text-align: left;
+    padding: 5px;
   }
