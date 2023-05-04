@@ -5,15 +5,17 @@ import "../css/CSSGeneral.css";
 
 const CrearCaso = () => {
   const { userInfo } = useContext(UserContext);
+  const [usuarix, setUsuarix] = useState("");
   const [redireccion, setRedireccion] = useState(false);
   console.log(userInfo);
 
   function aPortal() {
     setRedireccion(true);
+    setUsuarix(userInfo.name);
   }
 
   if (redireccion) {
-    return <Navigate to="/" />;
+    return <Navigate to={`/PortalAdmin/${usuarix}`} />;
   }
 
   console.log(userInfo);
