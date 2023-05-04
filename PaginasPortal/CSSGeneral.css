@@ -149,7 +149,7 @@
     margin-right: 10px;
   }
   .grid-item {
-    background: #e4f1ec;
+    background: white;
     padding: 8px;
     margin: auto;
     margin-bottom: 5px;
@@ -163,3 +163,38 @@
     margin: auto;
     width: 500px;
   }
+  .formCrearCaso{
+    text-align: left;
+    margin: auto;
+    width: 450px;
+    display: grid; 
+    grid-template-columns: 1fr 1.8fr; 
+    grid-template-rows: repeat(6, 1fr); 
+    grid-column-gap: 5px;
+    grid-row-gap: 8px; 
+    margin-bottom: 20px;
+    align-items: center;
+  }
+  .selectsCrear {
+    width: 100%;
+    height: 30px;
+    padding: 5px 5px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 14px;
+    margin-right: 10px;
+  }
+  input{
+    margin: auto;
+    width: 100%;
+  }
+  .parent { 
+    display: grid; 
+    grid-template-columns: 1fr 3fr; 
+    grid-template-rows: repeat(6, 1fr); 
+    grid-column-gap: 10px;
+    grid-row-gap: 15px; 
+    }
