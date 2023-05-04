@@ -7,7 +7,6 @@ import { redireccionPortal } from "../funciones/redireccion";
 const PortalEst = () => {
   const { userInfo } = useContext(UserContext);
   const [redireccion, setRedireccion] = useState(false);
-  console.log(userInfo);
 
   function cerrarSesion() {
     const confirmed = window.confirm(

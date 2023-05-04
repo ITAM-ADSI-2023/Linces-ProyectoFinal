@@ -28,7 +28,6 @@ const PortalAdmin = () => {
   }
   //mantener el userInfo en cache para no perderlo cuando se haga refresh
 
-  console.log(userInfo);
   return (
     <>
       <head>

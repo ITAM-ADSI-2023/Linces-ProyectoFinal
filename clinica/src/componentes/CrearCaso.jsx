@@ -18,8 +18,6 @@ const CrearCaso = () => {
     return <Navigate to={`/PortalAdmin/${usuarix}`} />;
   }
 
-  console.log(userInfo);
-
   return (
     <>
       <body>
