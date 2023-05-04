@@ -5,7 +5,7 @@ import "../css/CSSGeneral.css";
 
 const PortalAdmin = () => {
   const { userInfo } = useContext(UserContext);
-  const [redireccion, setRedireccion] = useState(false);
+  const [redireccion, setRedireccion] = useState("");
   console.log(userInfo);
 
   function cerrarSesion() {
@@ -13,12 +13,18 @@ const PortalAdmin = () => {
       "¿Estás seguro que quieres cerrar sesión?"
     );
     if (confirmed) {
-      setRedireccion(true);
+      setRedireccion("CerrarSesion");
     }
   }
 
-  if (redireccion) {
+  function aCrearCaso() {
+    setRedireccion("CrearCaso");
+  }
+
+  if (redireccion === "CerrarSesion") {
     return <Navigate to="/" />;
+  } else if (redireccion === "CrearCaso") {
+    return <Navigate to="/NuevoCaso" />;
   }
   //mantener el userInfo en cache para no perderlo cuando se haga refresh
 
@@ -36,7 +42,11 @@ const PortalAdmin = () => {
         </header>
 
         <main>
-          <button className="inline" id="btnCrearCasoPortalAdmin">
+          <button
+            className="inline"
+            id="btnCrearCasoPortalAdmin"
+            onClick={aCrearCaso}
+          >
             Crear caso
           </button>
           <button className="inline" id="btnBuscarCasoPortalAdmin">

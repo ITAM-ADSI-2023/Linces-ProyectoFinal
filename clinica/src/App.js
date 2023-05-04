@@ -4,6 +4,7 @@ import UserContext from "./context/UserContext";
 import Login from "./componentes/LogIn";
 import PortalAdmin from "./componentes/PortalAdmin";
 import PortalEst from "./componentes/PortalEst";
+import CrearCaso from "./componentes/CrearCaso";
 
 function App() {
   const [usuarix, setUsuarix] = useState({
@@ -20,6 +21,7 @@ function App() {
           <Route path="/" element={<Login />} />
           <Route path="/PortalAdmin/:id" element={<PortalAdmin />} />
           <Route path="/PortalEst/:id" element={<PortalEst />} />
+          <Route path="/NuevoCaso" element={<CrearCaso />} />
         </Routes>
       </Router>
     </UserContext.Provider>
