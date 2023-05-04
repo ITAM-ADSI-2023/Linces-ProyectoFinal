@@ -204,3 +204,41 @@
     margin-top: 40px;
     align-items: center;
   }
+  .formAgregarTarea{
+    text-align: left;
+    margin: auto;
+    width: 800px;
+    display: grid; 
+    grid-template-columns: 1fr 1.8fr; 
+    grid-template-rows: repeat(8, 1fr); 
+    grid-column-gap: 3px;
+    grid-row-gap: 8px; 
+    align-items: center;
+    height: 220px;
+  }
+  .divNota{
+    text-align: left;
+    margin: auto;
+    width: 400px;
+    display: grid; 
+    grid-template-columns: 1fr 7fr; 
+    grid-template-rows: repeat(2, 1fr); 
+    grid-column-gap: 3px;
+    grid-row-gap: 8px; 
+    align-items: center;
+    height: 80px;
+    margin-top: 10px;
+    margin-bottom: 40px;
+  }
+  .espacioNota {
+    width: 100%;
+    height: 70px;
+    padding: 5px 5px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 14px;
+    margin-bottom: 10px;
+  }
