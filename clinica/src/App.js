@@ -1,11 +1,28 @@
+import React, { useState } from "react";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import UserContext from "./context/UserContext";
 import Login from "./componentes/LogIn";
-import React from "react";
+import PortalAdmin from "./componentes/PortalAdmin";
+import PortalEst from "./componentes/PortalEst";
 
 function App() {
+  const [usuarix, setUsuarix] = useState({
+    nombre: "",
+    tipo: "",
+  });
+
   return (
-    <div>
-      <Login />
-    </div>
+    <UserContext.Provider
+      value={{ userInfo: usuarix, setUserInfo: setUsuarix }}
+    >
+      <Router>
+        <Routes>
+          <Route path="/" element={<Login />} />
+          <Route path="/PortalAdmin/:id" element={<PortalAdmin />} />
+          <Route path="/PortalEst/:id" element={<PortalEst />} />
+        </Routes>
+      </Router>
+    </UserContext.Provider>
   );
 }
 
