@@ -9,7 +9,12 @@ const PortalAdmin = () => {
   console.log(userInfo);
 
   function cerrarSesion() {
-    setRedireccion(true);
+    const confirmed = window.confirm(
+      "¿Estás seguro que quieres cerrar sesión?"
+    );
+    if (confirmed) {
+      setRedireccion(true);
+    }
   }
 
   if (redireccion) {
