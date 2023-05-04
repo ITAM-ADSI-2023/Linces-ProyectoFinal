@@ -119,9 +119,47 @@
     margin: auto;
   }
   ul li {
-    background: #c1e6d6;
+    background: #e4f1ec;
     color: black;
     margin: 5px;
     text-align: left;
     padding: 5px;
+  }
+  .textBoxBuscar {
+    width: 400px;
+    height: 50px;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 15px;
+  }
+  .selectsBuscar {
+    width: 150px;
+    height: 30px;
+    padding: 5px 5px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 14px;
+    margin-right: 10px;
+  }
+  .grid-item {
+    background: #e4f1ec;
+    padding: 8px;
+    margin: auto;
+    margin-bottom: 5px;
+    font-size: 18px;
+    text-align: center;
+    width: 500px;
+    height: 20px;
+    border-radius: 4px;
+  }
+  .grid-container{
+    margin: auto;
+    width: 500px;
   }
