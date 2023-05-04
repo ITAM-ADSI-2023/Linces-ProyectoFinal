@@ -1,9 +1,21 @@
 import React, { useState, useContext } from "react";
+import { Navigate } from "react-router-dom";
 import UserContext from "../context/UserContext";
 import "../css/CSSGeneral.css";
 
 const PortalAdmin = () => {
   const { userInfo } = useContext(UserContext);
+  const [redireccion, setRedireccion] = useState(false);
+  console.log(userInfo);
+
+  function cerrarSesion() {
+    setRedireccion(true);
+  }
+
+  if (redireccion) {
+    return <Navigate to="/" />;
+  }
+  //mantener el userInfo en cache para no perderlo cuando se haga refresh
 
   console.log(userInfo);
   return (
@@ -14,7 +26,7 @@ const PortalAdmin = () => {
       <body>
         <header>
           <div className="div_header">
-            <h1>Bienvenidx, [nombre del usuario]</h1>
+            <h1>Bienvenidx, {userInfo.nombre}</h1>
           </div>
         </header>
 
@@ -29,6 +41,7 @@ const PortalAdmin = () => {
             <button
               className="cerrar_sesion_button"
               id="btnCerrarSesionPortalAdmin"
+              onClick={cerrarSesion}
             >
               Cerrar sesión
             </button>

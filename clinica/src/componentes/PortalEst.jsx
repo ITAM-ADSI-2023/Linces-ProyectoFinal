@@ -1,11 +1,21 @@
 import React, { useState, useContext } from "react";
+import { Navigate } from "react-router-dom";
 import UserContext from "../context/UserContext";
 import "../css/CSSGeneral.css";
 
 const PortalEst = () => {
   const { userInfo } = useContext(UserContext);
-
+  const [redireccion, setRedireccion] = useState(false);
   console.log(userInfo);
+
+  function cerrarSesion() {
+    setRedireccion(true);
+  }
+
+  if (redireccion) {
+    return <Navigate to="/" />;
+  }
+
   return (
     <>
       <head>
@@ -14,7 +24,7 @@ const PortalEst = () => {
       <body>
         <header>
           <div className="div_header">
-            <h1>Bienvenidx, [nombre del usuario]</h1>
+            <h1>Bienvenidx, {userInfo.nombre}</h1>
           </div>
         </header>
 
@@ -35,6 +45,7 @@ const PortalEst = () => {
             <button
               className="cerrar_sesion_button"
               id="btnCerrarSesionPortalEstudiante"
+              onClick={cerrarSesion}
             >
               Cerrar sesión
             </button>
