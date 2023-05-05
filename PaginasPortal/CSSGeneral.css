@@ -16,6 +16,17 @@
   .divCerrarSesion{
     margin-top: 80px;
   }
+  .divDetallesCasoBut{
+    text-align: center;
+    margin: auto;
+    width: 500px;
+    display: grid; 
+    grid-template-columns: 1fr 1fr 1fr; 
+    grid-template-rows: repeat(3, 1fr); 
+    grid-column-gap: 1px;
+    align-items: center;
+    height: 30px;
+  }
   .divLista{
     margin: auto;
     width: 50%;
@@ -107,7 +118,7 @@
     color: darkslategray;
   }
   h2 {
-    font-size: 35px;
+    font-size: 30px;
     font-weight: 300;
     color: black;
   }
@@ -241,4 +252,34 @@
     box-sizing: border-box;
     font-size: 14px;
     margin-bottom: 10px;
+  }
+  .divDetallesCaso{
+    text-align: center;
+    margin: auto;
+    width: 700px;
+    display: grid; 
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr; 
+    grid-template-rows: repeat(25, 1fr); 
+    grid-column-gap: 3px;
+    grid-row-gap: .5px; 
+    align-items: center;
+    height: 300px;
+    margin-top: 20px;
+    color: white;
+  }
+  .divTareasDetallesCaso{
+    background:#006D5B;
+    width: 800px;
+    padding: 10px;
+    border-radius: 4px;
+    text-align: center;
+    margin: auto;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    height: 350px;
+  }
+  .h2Detalles{
+    font-size: 30px;
+    font-weight: 300;
+    color: white;
   }
