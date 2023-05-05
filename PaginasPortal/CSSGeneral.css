@@ -312,4 +312,34 @@
   .subtres2 { grid-area: subtres2; }
   .subcuatro { grid-area: subcuatro; }
   .subcuatro2 { grid-area: subcuatro2; }
+
+  .divBorradoresCorrecciones {  display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    gap: 3px 3px;
+    grid-auto-flow: row;
+    grid-template-areas:
+      "principal principal principal principal"
+      "principal1 principal2 principal3 principal4"
+      "secundario secundario secundario secundario"
+      "secundario1 secundario2 secundario3 secundario4";
+      margin: auto;
+      text-align: center;
+      align-items: center;
+      width: 550px;
+      margin-top: 40px;
+      margin-bottom: 40px;
+  }
+  .principal { grid-area: principal; }
+  .principal1 { grid-area: principal1; }
+  .principal2 { grid-area: principal2; }
+  .principal3 { grid-area: principal3; }
+  .principal4 { grid-area: principal4; }
+  .secundario { grid-area: secundario; }
+  .secundario1 { grid-area: secundario1; }
+  .secundario2 { grid-area: secundario2; }
+  .secundario3 { grid-area: secundario3; }
+  .secundario4 { grid-area: secundario4; }
+  
+  
   
