@@ -16,6 +16,17 @@
   .divCerrarSesion{
     margin-top: 80px;
   }
+  .divDetallesCasoBut{
+    text-align: center;
+    margin: auto;
+    width: 500px;
+    display: grid; 
+    grid-template-columns: 1fr 1fr 1fr; 
+    grid-template-rows: repeat(3, 1fr); 
+    grid-column-gap: 1px;
+    align-items: center;
+    height: 30px;
+  }
   .divLista{
     margin: auto;
     width: 50%;
@@ -107,7 +118,7 @@
     color: darkslategray;
   }
   h2 {
-    font-size: 35px;
+    font-size: 30px;
     font-weight: 300;
     color: black;
   }
@@ -204,3 +215,131 @@
     margin-top: 40px;
     align-items: center;
   }
+  .formAgregarTarea{
+    text-align: left;
+    margin: auto;
+    width: 800px;
+    display: grid; 
+    grid-template-columns: 1fr 1.8fr; 
+    grid-template-rows: repeat(8, 1fr); 
+    grid-column-gap: 3px;
+    grid-row-gap: 8px; 
+    align-items: center;
+    height: 220px;
+  }
+  .divNota{
+    text-align: left;
+    margin: auto;
+    width: 400px;
+    display: grid; 
+    grid-template-columns: 1fr 7fr; 
+    grid-template-rows: repeat(2, 1fr); 
+    grid-column-gap: 3px;
+    grid-row-gap: 8px; 
+    align-items: center;
+    height: 80px;
+    margin-top: 10px;
+    margin-bottom: 40px;
+  }
+  .espacioNota {
+    width: 100%;
+    height: 70px;
+    padding: 5px 5px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 14px;
+    margin-bottom: 10px;
+  }
+  .divDetallesCaso{
+    text-align: center;
+    margin: auto;
+    width: 700px;
+    display: grid; 
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr; 
+    grid-template-rows: repeat(25, 1fr); 
+    grid-column-gap: 3px;
+    grid-row-gap: .5px; 
+    align-items: center;
+    height: 300px;
+    margin-top: 20px;
+    color: white;
+  }
+  .divTareasDetallesCaso{
+    background:#006D5B;
+    width: 800px;
+    padding: 10px;
+    border-radius: 4px;
+    text-align: center;
+    margin: auto;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    height: 350px;
+  }
+  .h2Detalles{
+    font-size: 30px;
+    font-weight: 300;
+    color: white;
+  }
+  .divVersionFinal {  display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    gap: 3px 3px;
+    grid-auto-flow: row;
+    grid-template-areas:
+      "Uno Uno dos dos"
+      "subuno subuno2 subdos subdos2"
+      "tres tres cuatro cuatro"
+      "subtres subtres2 subcuatro subcuatro2";
+    margin: auto;
+    text-align: center;
+    align-items: center;
+    width: 800px;
+    margin-top: 40px;
+    margin-bottom: 40px;
+  }
+  .Uno { grid-area: Uno; }
+  .dos { grid-area: dos; }
+  .subuno { grid-area: subuno; }
+  .subuno2 { grid-area: subuno2; }
+  .subdos { grid-area: subdos; }
+  .subdos2 { grid-area: subdos2; }
+  .tres { grid-area: tres; }
+  .cuatro { grid-area: cuatro; }
+  .subtres { grid-area: subtres; }
+  .subtres2 { grid-area: subtres2; }
+  .subcuatro { grid-area: subcuatro; }
+  .subcuatro2 { grid-area: subcuatro2; }
+
+  .divBorradoresCorrecciones {  display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    gap: 3px 3px;
+    grid-auto-flow: row;
+    grid-template-areas:
+      "principal principal principal principal"
+      "principal1 principal2 principal3 principal4"
+      "secundario secundario secundario secundario"
+      "secundario1 secundario2 secundario3 secundario4";
+      margin: auto;
+      text-align: center;
+      align-items: center;
+      width: 550px;
+      margin-top: 40px;
+      margin-bottom: 40px;
+  }
+  .principal { grid-area: principal; }
+  .principal1 { grid-area: principal1; }
+  .principal2 { grid-area: principal2; }
+  .principal3 { grid-area: principal3; }
+  .principal4 { grid-area: principal4; }
+  .secundario { grid-area: secundario; }
+  .secundario1 { grid-area: secundario1; }
+  .secundario2 { grid-area: secundario2; }
+  .secundario3 { grid-area: secundario3; }
+  .secundario4 { grid-area: secundario4; }
+  
+  
+  
