@@ -1,5 +1,5 @@
 import React, { useState, useContext } from "react";
-import { Navigate } from "react-router-dom";
+import { Link, Navigate } from "react-router-dom";
 import UserContext from "../context/UserContext";
 import CasosContext from "../context/CasoContext";
 import "../css/CSSGeneral.css";
@@ -63,16 +63,20 @@ const CrearCaso = () => {
     }
   };
 
-  function aPortal() {
-    setRedireccion("RegresarPortal");
-    setUsuarix(userInfo.name);
-  }
+  const aPortal = () => {
+    // setUsuarix(userInfo.name);
+    // setRedireccion("RegresarPortal");
+  };
 
-  if (redireccion === "RegresarPortal") {
-    return <Navigate to={`/PortalAdmin/${usuarix}`} />;
-  } else if (redireccion === "CrearCaso") {
-    return <Navigate to={`/DetallesCaso/${iniciales}`} />;
-  }
+  useEffect(() => {
+    setUsuarix(userInfo.nombre);
+  });
+
+  // if (redireccion === "RegresarPortal") {
+  //   // return <Navigate to={`/PortalAdmin/${usuarix}`} />;
+  // } else if (redireccion === "CrearCaso") {
+  //   return <Navigate to={`/DetallesCaso/${iniciales}`} />;
+  // }
 
   return (
     <>
@@ -177,9 +181,11 @@ const CrearCaso = () => {
         <button onClick={createCasoNuevo}>Crear Caso</button>
 
         <div className="divCerrarSesion">
-          <button className="cerrar_sesion_button" onClick={aPortal}>
-            Regresar
-          </button>
+          <Link to={`/PortalAdmin/${userInfo.nombre}`}>
+            <button className="cerrar_sesion_button" onClick={aPortal}>
+              Regresar
+            </button>
+          </Link>
         </div>
         <p className="mt-5 mb-3 text-body-secondary">
           &copy; Derechos reservados Linces 2023

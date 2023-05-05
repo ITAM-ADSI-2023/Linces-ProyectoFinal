@@ -183,7 +183,7 @@ const DetallesCaso = () => {
       </div>
 
       <div class="divCerrarSesion">
-        <Link to={`/PortalAdmin/${userInfo.name}`}>
+        <Link to={`/PortalAdmin/${userInfo.nombre}`}>
           <button
             class="cerrar_sesion_button"
             type="button"

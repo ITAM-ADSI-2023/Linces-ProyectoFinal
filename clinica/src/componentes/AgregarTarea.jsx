@@ -1,9 +1,9 @@
 import React, { useState, useContext } from "react";
 import { useParams, Link } from "react-router-dom";
-import "../css/CSSGeneral.css";
 import UserContext from "../context/UserContext";
 import CasosContext from "../context/CasoContext";
 import { useEffect } from "react";
+import "../css/CSSGeneral.css";
 
 const AgregarTarea = () => {
   const params = useParams();
@@ -163,7 +163,7 @@ const AgregarTarea = () => {
           </button>
         </Link>
 
-        <Link to={`/PortalAdmin/${userInfo.name}`}>
+        <Link to={`/PortalAdmin/${userInfo.nombre}`}>
           <button
             class="cerrar_sesion_button"
             type="button"

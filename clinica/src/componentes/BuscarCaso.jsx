@@ -48,10 +48,14 @@ const BuscarCaso = () => {
     showResultados();
   }, [filtroEstado, filtroIniciales, filtroTipo]);
 
+  useEffect(() => {
+    setUsuarix(userInfo.nombre);
+  });
+
   function aPortal() {
-    setRedireccion(true);
-    setUsuarix(userInfo.name);
-    setTipo(userInfo.tipo);
+    // setRedireccion(true);
+    // setUsuarix(userInfo.name);
+    // setTipo(userInfo.tipo);
   }
 
   if (redireccion) {
@@ -128,9 +132,11 @@ const BuscarCaso = () => {
         </div>
         <br />
         <div class="divCerrarSesion">
-          <button class="cerrar_sesion_button" onClick={aPortal}>
-            Regresar
-          </button>
+          <Link to={`/PortalAdmin/${userInfo.nombre}`}>
+            <button class="cerrar_sesion_button" onClick={aPortal}>
+              Regresar
+            </button>
+          </Link>
         </div>
 
         <p class="mt-5 mb-3 text-body-secondary">
