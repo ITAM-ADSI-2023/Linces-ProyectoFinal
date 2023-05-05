@@ -12,7 +12,7 @@ const CrearCaso = () => {
 
   //Estados para manejar la redirección de páginas
   const [usuarix, setUsuarix] = useState("");
-  const [redireccion, setRedireccion] = useState(false);
+  const [redireccion, setRedireccion] = useState("");
 
   //Estados (atributos) para creación de caso
   const [nombreCaso, setNombreCaso] = useState("");
@@ -24,8 +24,7 @@ const CrearCaso = () => {
 
   //Función para crear caso
   const createCasoNuevo = () => {
-    //
-    console.log(casos);
+    setRedireccion("CrearCaso");
 
     if (casos[0].nombre == "") {
       setCasos([
@@ -55,12 +54,14 @@ const CrearCaso = () => {
   };
 
   function aPortal() {
-    setRedireccion(true);
+    setRedireccion("RegresarPortal");
     setUsuarix(userInfo.name);
   }
 
-  if (redireccion) {
+  if (redireccion === "RegresarPortal") {
     return <Navigate to={`/PortalAdmin/${usuarix}`} />;
+  } else if (redireccion === "CrearCaso") {
+    return <Navigate to={`/DetallesCaso/${nombreCaso}`} />;
   }
 
   return (
@@ -156,9 +157,10 @@ const CrearCaso = () => {
           </div>
         </form>
         <br />
-        <Link to={`/DetallesCaso/${nombreCaso}`}>
+        {/* <Link to={`/DetallesCaso/${nombreCaso}`}>
           <button onClick={createCasoNuevo}>Crear Caso</button>
-        </Link>
+        </Link> */}
+        <button onClick={createCasoNuevo}>Crear Caso</button>
 
         <div className="divCerrarSesion">
           <button className="cerrar_sesion_button" onClick={aPortal}>
