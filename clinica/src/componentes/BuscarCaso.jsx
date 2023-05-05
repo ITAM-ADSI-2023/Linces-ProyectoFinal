@@ -85,9 +85,9 @@ const BuscarCaso = () => {
             onChange={(e) => setFiltroTipo(e.target.value)}
           >
             <option value=""></option>
-            <option value="opcion1">Violencia doméstica</option>
-            <option value="opcion2">Discriminación</option>
-            <option value="opcion3">Acoso</option>
+            <option value="ViolenciaDomestica">Violencia doméstica</option>
+            <option value="Discriminacion">Discriminación</option>
+            <option value="Acoso">Acoso</option>
           </select>
           <label for="nombreIn">Nombre/iniciales:</label>
           <select
@@ -109,9 +109,14 @@ const BuscarCaso = () => {
             onChange={(e) => setFiltroEstado(e.target.value)}
           >
             <option value=""></option>
-            <option value="opcion1">Opcion 1</option>
-            <option value="opcion2">Opcion 2</option>
-            <option value="opcion3">Opcion 3</option>
+            <option value="InvestigacionAbogadxs">
+              Investigación abogadxs
+            </option>
+            <option value="SinPresentar">Sin presentar</option>
+            <option value="InicioDemanda">Inicio de la demanda</option>
+            <option value="InvestigacionTribunales">
+              Investigación tribunales
+            </option>
           </select>
         </div>
         <br />
