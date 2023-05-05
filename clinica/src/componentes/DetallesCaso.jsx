@@ -35,7 +35,7 @@ const DetallesCaso = () => {
     let listaTareas = [];
 
     for (let i = 0; i < casos.length; i++) {
-      if (casos[i].nombre === params.id) {
+      if (casos[i].iniciales === params.id) {
         for (let j = 0; j < casos[i].tareas.length; j++) {
           listaTareas.push(
             <>
