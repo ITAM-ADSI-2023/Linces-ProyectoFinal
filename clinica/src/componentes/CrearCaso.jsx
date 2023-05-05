@@ -130,9 +130,10 @@ const CrearCaso = () => {
               value={tipoCaso}
               onChange={(e) => setTipoCaso(e.target.value)}
             >
-              <option value="opcion1">Opcion 1</option>
-              <option value="opcion2">Opcion 2</option>
-              <option value="opcion3">Opcion 3</option>
+              <option value=""></option>
+              <option value="opcion1">Violencia doméstica</option>
+              <option value="opcion2">Discriminación</option>
+              <option value="opcion3">Acoso</option>
             </select>
           </div>
 
