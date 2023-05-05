@@ -24,11 +24,30 @@ const CrearCaso = () => {
 
   //Función para crear caso
   const createCasoNuevo = () => {
-    setRedireccion("CrearCaso");
-
-    if (casos[0].nombre == "") {
-      setCasos([
-        {
+    if (
+      nombreCaso != "" &&
+      iniciales != "" &&
+      descripcionCaso != "" &&
+      tipoCaso != "" &&
+      estado != "" &&
+      fecha != ""
+    ) {
+      setRedireccion("CrearCaso");
+      if (casos[0].nombre == "") {
+        setCasos([
+          {
+            nombre: nombreCaso,
+            iniciales: iniciales,
+            descripcionDelCaso: descripcionCaso,
+            tipoDeCaso: tipoCaso,
+            estado: estado,
+            fecha: fecha,
+            tareas: [],
+          },
+        ]);
+      } else {
+        const newCasos = casos;
+        newCasos.push({
           nombre: nombreCaso,
           iniciales: iniciales,
           descripcionDelCaso: descripcionCaso,
@@ -36,20 +55,11 @@ const CrearCaso = () => {
           estado: estado,
           fecha: fecha,
           tareas: [],
-        },
-      ]);
+        });
+        setCasos(newCasos);
+      }
     } else {
-      const newCasos = casos;
-      newCasos.push({
-        nombre: nombreCaso,
-        iniciales: iniciales,
-        descripcionDelCaso: descripcionCaso,
-        tipoDeCaso: tipoCaso,
-        estado: estado,
-        fecha: fecha,
-        tareas: [],
-      });
-      setCasos(newCasos);
+      alert("Favor de llenar todos los campos del caso.");
     }
   };
 
@@ -157,9 +167,6 @@ const CrearCaso = () => {
           </div>
         </form>
         <br />
-        {/* <Link to={`/DetallesCaso/${nombreCaso}`}>
-          <button onClick={createCasoNuevo}>Crear Caso</button>
-        </Link> */}
         <button onClick={createCasoNuevo}>Crear Caso</button>
 
         <div className="divCerrarSesion">
