@@ -1,5 +1,5 @@
 import React, { useState, useContext } from "react";
-import { Navigate, Link } from "react-router-dom";
+import { Navigate } from "react-router-dom";
 import UserContext from "../context/UserContext";
 import CasosContext from "../context/CasoContext";
 import "../css/CSSGeneral.css";
@@ -25,15 +25,15 @@ const CrearCaso = () => {
   //Función para crear caso
   const createCasoNuevo = () => {
     if (
-      nombreCaso != "" &&
-      iniciales != "" &&
-      descripcionCaso != "" &&
-      tipoCaso != "" &&
-      estado != "" &&
-      fecha != ""
+      nombreCaso !== "" &&
+      iniciales !== "" &&
+      descripcionCaso !== "" &&
+      tipoCaso !== "" &&
+      estado !== "" &&
+      fecha !== ""
     ) {
       setRedireccion("CrearCaso");
-      if (casos[0].nombre == "") {
+      if (casos[0].nombre === "") {
         setCasos([
           {
             nombre: nombreCaso,

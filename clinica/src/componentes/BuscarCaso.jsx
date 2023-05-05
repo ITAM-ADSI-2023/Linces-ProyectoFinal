@@ -27,9 +27,9 @@ const BuscarCaso = () => {
     console.log(casos);
 
     for (let i = 0; i < casos.length; i++) {
-      if (filtroNombre == "" || filtroNombre == casos[i].nombre) {
-        if (filtroTipo == "" || filtroTipo == casos[i].tipoDeCaso) {
-          if (filtroEstado == "" || filtroEstado == casos[i].estado) {
+      if (filtroNombre === "" || filtroNombre === casos[i].nombre) {
+        if (filtroTipo === "" || filtroTipo === casos[i].tipoDeCaso) {
+          if (filtroEstado === "" || filtroEstado === casos[i].estado) {
             listaResultados.push(
               <div class="grid-item">{casos[i].nombre}</div>
             );

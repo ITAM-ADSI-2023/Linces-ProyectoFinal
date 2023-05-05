@@ -28,7 +28,7 @@ const AgregarTarea = () => {
 
     let newCasos = casos;
     for (let i = 0; i < casos.length; i++) {
-      if (newCasos[i].nombre == params.idCaso) {
+      if (newCasos[i].nombre === params.idCaso) {
         newCasos[i].tareas.push(newTarea);
       }
     }

@@ -6,7 +6,6 @@ import UserContext from "../context/UserContext";
 const PortalAdmin = () => {
   const { userInfo } = useContext(UserContext);
   const [redireccion, setRedireccion] = useState("");
-  console.log(userInfo);
 
   function cerrarSesion() {
     const confirmed = window.confirm(
@@ -32,7 +31,6 @@ const PortalAdmin = () => {
   } else if (redireccion === "BuscarCaso") {
     return <Navigate to="/BuscarCaso" />;
   }
-  //mantener el userInfo en cache para no perderlo cuando se haga refresh
 
   return (
     <>
