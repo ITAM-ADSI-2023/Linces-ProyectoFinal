@@ -5,19 +5,25 @@ import "../css/CSSGeneral.css";
 
 const PortalEst = () => {
   const { userInfo } = useContext(UserContext);
-  const [redireccion, setRedireccion] = useState(false);
+  const [redireccion, setRedireccion] = useState("");
 
   function cerrarSesion() {
     const confirmed = window.confirm(
       "¿Estás seguro que quieres cerrar sesión?"
     );
     if (confirmed) {
-      setRedireccion(true);
+      setRedireccion("CerrarSesion");
     }
   }
 
-  if (redireccion) {
+  function aBuscarCaso() {
+    setRedireccion("BuscarCaso");
+  }
+
+  if (redireccion === "CerrarSesion") {
     return <Navigate to="/" />;
+  } else if (redireccion === "BuscarCaso") {
+    return <Navigate to="/BuscarCaso" />;
   }
 
   return (
@@ -34,7 +40,9 @@ const PortalEst = () => {
 
         <main>
           <div>
-            <button id="btnBuscarCasoPortalEstudiante">Buscar caso</button>
+            <button id="btnBuscarCasoPortalEstudiante" onClick={aBuscarCaso}>
+              Buscar caso
+            </button>
           </div>
           <h2>Lista de Tareas</h2>
           <div className="divLista">

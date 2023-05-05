@@ -14,10 +14,13 @@ const BuscarCaso = () => {
     setRedireccion(true);
     setUsuarix(userInfo.name);
     setTipo(userInfo.tipo);
+    console.log(userInfo.name);
+    console.log(userInfo.tipo);
   }
 
   if (redireccion) {
-    return <Navigate to={`/Portal${tipo}/${usuarix}`} />;
+    return <Navigate to={`/Portal${tipo}/${userInfo.name}`} />;
+    console.log(userInfo.name);
   }
 
   return (
@@ -76,7 +79,9 @@ const BuscarCaso = () => {
         </div>
         <br />
         <div class="divCerrarSesion">
-          <button class="cerrar_sesion_button">Regresar</button>
+          <button class="cerrar_sesion_button" onClick={aPortal}>
+            Regresar
+          </button>
         </div>
 
         <p class="mt-5 mb-3 text-body-secondary">

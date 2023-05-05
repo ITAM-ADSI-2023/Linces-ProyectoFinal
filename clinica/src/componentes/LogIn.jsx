@@ -14,18 +14,21 @@ function Login() {
     const valorUsuarix = event.target.elements.username.value;
     setUsuarix(valorUsuarix);
 
+    let tipo;
     if (valorUsuarix === "Jessica") {
       setTipoUsuarix("Admin");
+      tipo = "Admin";
       setUsuarix("Jessica");
     } else if (valorUsuarix === "Mike") {
       setTipoUsuarix("Est");
+      tipo = "Est";
       setUsuarix("Mike");
     } else {
     }
 
     setUserInfo({
       nombre: `${valorUsuarix}`,
-      tipo: `${tipoU}`,
+      tipo: `${tipo}`,
     });
   }
 

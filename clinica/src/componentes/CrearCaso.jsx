@@ -100,7 +100,9 @@ const CrearCaso = () => {
         </div>
 
         <div className="divCerrarSesion">
-          <button className="cerrar_sesion_button">Regresar</button>
+          <button className="cerrar_sesion_button" onClick={aPortal}>
+            Regresar
+          </button>
         </div>
         <p className="mt-5 mb-3 text-body-secondary">
           &copy; Derechos reservados Linces 2023
