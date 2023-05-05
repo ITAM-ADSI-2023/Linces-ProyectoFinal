@@ -71,7 +71,7 @@ const CrearCaso = () => {
   if (redireccion === "RegresarPortal") {
     return <Navigate to={`/PortalAdmin/${usuarix}`} />;
   } else if (redireccion === "CrearCaso") {
-    return <Navigate to={`/DetallesCaso/${nombreCaso}`} />;
+    return <Navigate to={`/DetallesCaso/${iniciales}`} />;
   }
 
   return (

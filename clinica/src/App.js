@@ -138,7 +138,7 @@ function App() {
             <Route path="/PortalEst/:id" element={<PortalEst />} />
             <Route path="/NuevoCaso" element={<CrearCaso />} />
             <Route path="/BuscarCaso" element={<BuscarCaso />} />
-            <Route path="/AgregarTareas/:idCaso" element={<AgregarTarea />} />
+            <Route path="/AgregarTareas/:id" element={<AgregarTarea />} />
             <Route path="/DetallesCaso/:id" element={<DetallesCaso />} />
             <Route path="/InfoCaso" element={<InfoCaso />} />
           </Routes>

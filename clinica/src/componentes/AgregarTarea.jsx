@@ -8,7 +8,7 @@ const AgregarTarea = () => {
   const params = useParams();
 
   const { userInfo } = useContext(UserContext);
-  const { casos, setCasos } = useContext(CasosContext);
+  const { casos } = useContext(CasosContext);
 
   const [estudiante, setEstudiante] = useState("");
   const [fecha, setFecha] = useState("");
@@ -21,14 +21,14 @@ const AgregarTarea = () => {
     const newTarea = {
       estudiante: estudiante,
       fecha: fecha,
-      caso: params.idCaso,
+      caso: params.id,
       estatus: estatus,
       nota: nota,
     };
 
     let newCasos = casos;
     for (let i = 0; i < casos.length; i++) {
-      if (newCasos[i].nombre === params.idCaso) {
+      if (newCasos[i].nombre === params.id) {
         newCasos[i].tareas.push(newTarea);
       }
     }
@@ -81,7 +81,7 @@ const AgregarTarea = () => {
             name="caso"
             disabled
           >
-            <option value={`${params.idCaso}`}>{params.idCaso}</option>
+            <option value={`${params.id}`}>{params.id}</option>
             {/* {getCasos()} */}
           </select>
         </div>
@@ -121,7 +121,7 @@ const AgregarTarea = () => {
       </div>
 
       <div class="divCerrarSesion">
-        <Link to={`/DetallesCaso/${params.idCaso}`}>
+        <Link to={`/DetallesCaso/${params.id}`}>
           <button
             class="cerrar_sesion_button"
             type="button"

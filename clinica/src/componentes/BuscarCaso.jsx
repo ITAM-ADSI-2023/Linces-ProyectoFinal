@@ -1,5 +1,5 @@
 import React, { useState, useContext, useEffect } from "react";
-import { Navigate } from "react-router-dom";
+import { Link, Navigate } from "react-router-dom";
 import UserContext from "../context/UserContext";
 import CasosContext from "../context/CasoContext";
 import "../css/CSSGeneral.css";
@@ -7,7 +7,7 @@ import "../css/CSSGeneral.css";
 const BuscarCaso = () => {
   //Contextos
   const { userInfo } = useContext(UserContext);
-  const { casos, setCasos } = useContext(CasosContext);
+  const { casos } = useContext(CasosContext);
 
   //Estados para manejar la redirección de páginas
   const [usuarix, setUsuarix] = useState("");
@@ -31,7 +31,9 @@ const BuscarCaso = () => {
         if (filtroTipo === "" || filtroTipo === casos[i].tipoDeCaso) {
           if (filtroEstado === "" || filtroEstado === casos[i].estado) {
             listaResultados.push(
-              <div class="grid-item">{casos[i].nombre}</div>
+              <Link to={`/DetallesCaso/${casos[i].iniciales}`}>
+                <div class="grid-item">{casos[i].nombre}</div>
+              </Link>
             );
           }
         }

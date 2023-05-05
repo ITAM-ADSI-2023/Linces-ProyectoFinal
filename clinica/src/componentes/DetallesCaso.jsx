@@ -1,20 +1,33 @@
-import React, { useState, useContext, useEffect } from "react";
+import React, { useState, useContext } from "react";
 import { useParams, Link } from "react-router-dom";
 import UserContext from "../context/UserContext";
 import CasosContext from "../context/CasoContext";
 import "../css/CSSGeneral.css";
+import { useEffect } from "react";
 
 //Se llega mediante busqueda y/o crear caso (una vez que se haya instanciado uno nuevo)
 const DetallesCaso = () => {
   //Contextos
   const { userInfo } = useContext(UserContext);
-  const { casos, setCasos } = useContext(CasosContext);
+  const { casos } = useContext(CasosContext);
 
   //Jala el nombre del caso del url (que se manda de la pagina anterior)
   const params = useParams();
 
   //Para redirección
-  const [usuarix, setUsuarix] = useState("");
+  // const [usuarix, setUsuarix] = useState("");
+
+  const [nombreCaso, setNombreCaso] = useState("");
+  const [estatusCaso, setEstatusCaso] = useState("");
+
+  useEffect(() => {
+    for (let i = 0; i < casos.length; i++) {
+      if (casos[i].iniciales == params.id) {
+        setNombreCaso(casos[i].nombre);
+        setEstatusCaso(casos[i].estado);
+      }
+    }
+  });
 
   const createListaTareas = () => {
     console.log(casos);
@@ -115,15 +128,36 @@ const DetallesCaso = () => {
             class="selectsBuscar"
             id="txtNombreCasoDetalles"
             name="nombre-caso"
-            value={params.id}
+            value={nombreCaso}
             disabled
           />
 
           <label for="estatus-caso">Estatus del caso:</label>
           <select id="ddEstatusCAaso" class="selectsBuscar" name="estatus-caso">
-            <option value="pendiente">Pendiente</option>
-            <option value="en-proceso">En proceso</option>
-            <option value="finalizado">Finalizado</option>
+            <option
+              selected={estatusCaso === "InvestigacionAbogadxs"}
+              value="InvestigacionAbogadxs"
+            >
+              Investigación abogadxs
+            </option>
+            <option
+              selected={estatusCaso === "SinPresentar"}
+              value="SinPresentar"
+            >
+              Sin presentar
+            </option>
+            <option
+              selected={estatusCaso === "InicioDemanda"}
+              value="InicioDemanda"
+            >
+              Inicio de la demanda
+            </option>
+            <option
+              selected={estatusCaso === "InvestigacionTribunales"}
+              value="InvestigacionTribunales"
+            >
+              Investigación tribunales
+            </option>
           </select>
         </form>
       </div>
