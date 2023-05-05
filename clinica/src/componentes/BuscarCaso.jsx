@@ -24,7 +24,7 @@ const BuscarCaso = () => {
   const showResultados = () => {
     const listaResultados = [];
 
-    console.log(casos);
+    console.log(userInfo);
 
     for (let i = 0; i < casos.length; i++) {
       if (filtroNombre === "" || filtroNombre === casos[i].nombre) {
@@ -132,7 +132,13 @@ const BuscarCaso = () => {
         </div>
         <br />
         <div class="divCerrarSesion">
-          <Link to={`/PortalAdmin/${userInfo.nombre}`}>
+          <Link
+            to={
+              userInfo.tipo === "Est"
+                ? `/PortalEst/${userInfo.nombre}`
+                : `/PortalAdmin/${userInfo.nombre}`
+            }
+          >
             <button class="cerrar_sesion_button" onClick={aPortal}>
               Regresar
             </button>

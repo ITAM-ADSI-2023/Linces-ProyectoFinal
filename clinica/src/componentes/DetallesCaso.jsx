@@ -183,7 +183,13 @@ const DetallesCaso = () => {
       </div>
 
       <div class="divCerrarSesion">
-        <Link to={`/PortalAdmin/${userInfo.nombre}`}>
+        <Link
+          to={
+            userInfo.tipo === "Est"
+              ? `/PortalEst/${userInfo.nombre}`
+              : `/PortalAdmin/${userInfo.nombre}`
+          }
+        >
           <button
             class="cerrar_sesion_button"
             type="button"
@@ -193,11 +199,19 @@ const DetallesCaso = () => {
           </button>
         </Link>
 
-        <Link to={`/AgregarTareas/${params.id}`}>
-          <button class="cerrar_sesion_button" type="button" id="btAgregaTarea">
-            Ir a Agregar Tarea
-          </button>
-        </Link>
+        {userInfo.tipo === "Est" ? (
+          " "
+        ) : (
+          <Link to={`/AgregarTareas/${params.id}`}>
+            <button
+              class="cerrar_sesion_button"
+              type="button"
+              id="btAgregaTarea"
+            >
+              Ir a Agregar Tarea
+            </button>
+          </Link>
+        )}
       </div>
 
       <p class="mt-5 mb-3 text-body-secondary">
