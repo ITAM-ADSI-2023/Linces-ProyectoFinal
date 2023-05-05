@@ -1,26 +1,31 @@
-import React, { useState, useContext } from "react";
+import React, { useState, useContext, useEffect } from "react";
 import { Navigate } from "react-router-dom";
 import UserContext from "../context/UserContext";
 import CasosContext from "../context/CasoContext";
 import "../css/CSSGeneral.css";
-import { useEffect } from "react";
 
 const BuscarCaso = () => {
+  //Contextos
   const { userInfo } = useContext(UserContext);
   const { casos, setCasos } = useContext(CasosContext);
 
+  //Estados para manejar la redirección de páginas
   const [usuarix, setUsuarix] = useState("");
   const [tipo, setTipo] = useState("");
   const [redireccion, setRedireccion] = useState(false);
 
+  //Estados para filtrar
   const [filtroNombre, setFiltroNombre] = useState("");
   const [filtroTipo, setFiltroTipo] = useState("");
   const [filtroIniciales, setFiltroIniciales] = useState("");
   const [filtroEstado, setFiltroEstado] = useState("");
 
+  //Función para filtrar
   const showResultados = () => {
     const listaResultados = [];
+
     console.log(casos);
+
     for (let i = 0; i < casos.length; i++) {
       if (filtroNombre == "" || filtroNombre == casos[i].nombre) {
         if (filtroTipo == "" || filtroTipo == casos[i].tipoDeCaso) {
@@ -36,6 +41,7 @@ const BuscarCaso = () => {
     return listaResultados;
   };
 
+  //cambiarlo a algo onClick
   useEffect(() => {
     showResultados();
   }, [filtroEstado, filtroIniciales, filtroTipo]);
@@ -44,8 +50,6 @@ const BuscarCaso = () => {
     setRedireccion(true);
     setUsuarix(userInfo.name);
     setTipo(userInfo.tipo);
-    console.log(userInfo.name);
-    console.log(userInfo.tipo);
   }
 
   if (redireccion) {
@@ -114,9 +118,6 @@ const BuscarCaso = () => {
         <br />
         <div class="grid-container">
           <h2>Lista de resultados:</h2>
-          {/* <div class="grid-item">Resultado 1</div>
-          <div class="grid-item">Resultado 2</div>
-          <div class="grid-item">Resultado 3</div> */}
           {showResultados()}
         </div>
         <br />

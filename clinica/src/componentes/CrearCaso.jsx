@@ -6,12 +6,15 @@ import "../css/CSSGeneral.css";
 import { useEffect } from "react";
 
 const CrearCaso = () => {
+  //Contextos
   const { userInfo } = useContext(UserContext);
   const { casos, setCasos } = useContext(CasosContext);
 
+  //Estados para manejar la redirección de páginas
   const [usuarix, setUsuarix] = useState("");
   const [redireccion, setRedireccion] = useState(false);
 
+  //Estados (atributos) para creación de caso
   const [nombreCaso, setNombreCaso] = useState("");
   const [iniciales, setIniciales] = useState("");
   const [descripcionCaso, setDescripcionCaso] = useState("");
@@ -19,8 +22,11 @@ const CrearCaso = () => {
   const [estado, setEstado] = useState("");
   const [fecha, setFecha] = useState("");
 
+  //Función para crear caso
   const createCasoNuevo = () => {
+    //
     console.log(casos);
+
     if (casos[0].nombre == "") {
       setCasos([
         {

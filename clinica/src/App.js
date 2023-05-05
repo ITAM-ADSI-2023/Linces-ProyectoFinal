@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import UserContext from "./context/UserContext";
 import CasoContext from "./context/CasoContext";
-//import "./css/CSSGeneral.css";
 import Login from "./componentes/LogIn";
 import PortalAdmin from "./componentes/PortalAdmin";
 import PortalEst from "./componentes/PortalEst";
@@ -13,11 +12,13 @@ import AgregarTarea from "./componentes/AgregarTarea";
 import InfoCaso from "./componentes/InfoCaso";
 
 function App() {
+  //Para mantener la información de quien ingresó al portal
   const [usuarix, setUsuarix] = useState({
     nombre: "",
     tipo: "",
   });
 
+  //Mockup Base de Datos casos para poder ver el flujo del manejo de datos
   const [casosInfo, setCasosInfo] = useState([
     {
       nombre: "",

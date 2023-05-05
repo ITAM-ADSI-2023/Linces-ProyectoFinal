@@ -4,13 +4,19 @@ import UserContext from "../context/UserContext";
 import CasosContext from "../context/CasoContext";
 import "../css/CSSGeneral.css";
 
+//Se llega mediante busqueda y/o crear caso (una vez que se haya instanciado uno nuevo)
 const DetallesCaso = () => {
-  const params = useParams();
-  const [usuarix, setUsuarix] = useState("");
-
+  //Contextos
   const { userInfo } = useContext(UserContext);
   const { casos, setCasos } = useContext(CasosContext);
 
+  //Jala el nombre del caso del url (que se manda de la pagina anterior)
+  const params = useParams();
+
+  //Para redirección
+  const [usuarix, setUsuarix] = useState("");
+
+  //
   const createListaTareas = () => {
     console.log(casos);
 
@@ -128,153 +134,7 @@ const DetallesCaso = () => {
           <h2 class="h2Detalles">Tareas</h2>
         </div>
 
-        <div class="divDetallesCaso">
-          {createListaTareas()}
-
-          {/* <div>
-            <input
-              class="selectsCrear"
-              type="text"
-              id="tituloTarea"
-              name="titulo"
-            />
-          </div>
-          <div>
-            <input
-              class="selectsCrear"
-              type="text"
-              id="asignado"
-              name="asignado"
-            />
-          </div>
-          <div>
-            <input
-              class="selectsCrear"
-              type="date"
-              id="fechaEntrega"
-              name="fecha"
-            />
-          </div>
-          <div>
-            <input
-              class="selectsCrear"
-              type="text"
-              id="estatus"
-              name="estatus"
-            />
-          </div>
-          <div>
-            <input class="selectsCrear" type="text" id="nota" name="nota" />
-          </div> */}
-
-          {/* <div>
-            <input
-              class="selectsCrear"
-              type="text"
-              id="tituloTarea"
-              name="titulo"
-            />
-          </div>
-          <div>
-            <input
-              class="selectsCrear"
-              type="text"
-              id="asignado"
-              name="asignado"
-            />
-          </div>
-          <div>
-            <input
-              class="selectsCrear"
-              type="date"
-              id="fechaEntrega"
-              name="fecha"
-            />
-          </div>
-          <div>
-            <input
-              class="selectsCrear"
-              type="text"
-              id="estatus"
-              name="estatus"
-            />
-          </div>
-          <div>
-            <input class="selectsCrear" type="text" id="nota" name="nota" />
-          </div>
-
-          <div>
-            <input
-              class="selectsCrear"
-              type="text"
-              id="tituloTarea"
-              name="titulo"
-            />
-          </div>
-          <div>
-            <input
-              class="selectsCrear"
-              type="text"
-              id="asignado"
-              name="asignado"
-            />
-          </div>
-          <div>
-            <input
-              class="selectsCrear"
-              type="date"
-              id="fechaEntrega"
-              name="fecha"
-            />
-          </div>
-          <div>
-            <input
-              class="selectsCrear"
-              type="text"
-              id="estatus"
-              name="estatus"
-            />
-          </div>
-          <div>
-            <input class="selectsCrear" type="text" id="nota" name="nota" />
-          </div>
-
-          <div>
-            <input
-              class="selectsCrear"
-              type="text"
-              id="tituloTarea"
-              name="titulo"
-            />
-          </div>
-          <div>
-            <input
-              class="selectsCrear"
-              type="text"
-              id="asignado"
-              name="asignado"
-            />
-          </div>
-          <div>
-            <input
-              class="selectsCrear"
-              type="date"
-              id="fechaEntrega"
-              name="fecha"
-            />
-          </div>
-          <div>
-            <input
-              class="selectsCrear"
-              type="text"
-              id="estatus"
-              name="estatus"
-            />
-          </div>
-          <div>
-            <input class="selectsCrear" type="text" id="nota" name="nota" />
-          </div> */}
-        </div>
+        <div class="divDetallesCaso">{createListaTareas()}</div>
       </div>
 
       <div class="divDetallesCasoBut">
