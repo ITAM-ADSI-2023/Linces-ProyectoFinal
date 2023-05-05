@@ -53,8 +53,7 @@ const BuscarCaso = () => {
   }
 
   if (redireccion) {
-    return <Navigate to={`/Portal${tipo}/${userInfo.name}`} />;
-    console.log(userInfo.name);
+    return <Navigate to={`/Portal${tipo}/${usuarix}`} />;
   }
 
   return (
