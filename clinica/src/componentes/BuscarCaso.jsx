@@ -1,14 +1,44 @@
 import React, { useState, useContext } from "react";
 import { Navigate } from "react-router-dom";
 import UserContext from "../context/UserContext";
+import CasosContext from "../context/CasoContext";
 import "../css/CSSGeneral.css";
+import { useEffect } from "react";
 
 const BuscarCaso = () => {
   const { userInfo } = useContext(UserContext);
+  const { casos, setCasos } = useContext(CasosContext);
+
   const [usuarix, setUsuarix] = useState("");
   const [tipo, setTipo] = useState("");
   const [redireccion, setRedireccion] = useState(false);
-  console.log(userInfo);
+
+  const [filtroNombre, setFiltroNombre] = useState("");
+  const [filtroTipo, setFiltroTipo] = useState("");
+  const [filtroIniciales, setFiltroIniciales] = useState("");
+  const [filtroEstado, setFiltroEstado] = useState("");
+
+  const showResultados = () => {
+    const listaResultados = [];
+    console.log(casos);
+    for (let i = 0; i < casos.length; i++) {
+      if (filtroNombre == "" || filtroNombre == casos[i].nombre) {
+        if (filtroTipo == "" || filtroTipo == casos[i].tipoDeCaso) {
+          if (filtroEstado == "" || filtroEstado == casos[i].estado) {
+            listaResultados.push(
+              <div class="grid-item">{casos[i].nombre}</div>
+            );
+          }
+        }
+      }
+    }
+
+    return listaResultados;
+  };
+
+  useEffect(() => {
+    showResultados();
+  }, [filtroEstado, filtroIniciales, filtroTipo]);
 
   function aPortal() {
     setRedireccion(true);
@@ -37,6 +67,7 @@ const BuscarCaso = () => {
               class="textBoxBuscar"
               name="search"
               placeholder="Buscar..."
+              onChange={(e) => setFiltroNombre(e.target.value)}
             />
             <button type="submit">Buscar</button>
           </form>
@@ -48,7 +79,9 @@ const BuscarCaso = () => {
             class="selectsBuscar"
             id="tipoDelitoBusquedaCaso"
             name="tipoDelito"
+            onChange={(e) => setFiltroTipo(e.target.value)}
           >
+            <option value=""></option>
             <option value="opcion1">Opcion 1</option>
             <option value="opcion2">Opcion 2</option>
             <option value="opcion3">Opcion 3</option>
@@ -58,13 +91,21 @@ const BuscarCaso = () => {
             class="selectsBuscar"
             id="nombreInBusquedaCaso"
             name="nombreIn"
+            onChange={(e) => setFiltroIniciales(e.target.value)}
           >
+            <option value=""></option>
             <option value="opcion1">Opcion 1</option>
             <option value="opcion2">Opcion 2</option>
             <option value="opcion3">Opcion 3</option>
           </select>
           <label for="estado">Estado:</label>
-          <select class="selectsBuscar" id="estadoBusquedaCaso" name="estado">
+          <select
+            class="selectsBuscar"
+            id="estadoBusquedaCaso"
+            name="estado"
+            onChange={(e) => setFiltroEstado(e.target.value)}
+          >
+            <option value=""></option>
             <option value="opcion1">Opcion 1</option>
             <option value="opcion2">Opcion 2</option>
             <option value="opcion3">Opcion 3</option>
@@ -73,9 +114,10 @@ const BuscarCaso = () => {
         <br />
         <div class="grid-container">
           <h2>Lista de resultados:</h2>
-          <div class="grid-item">Resultado 1</div>
+          {/* <div class="grid-item">Resultado 1</div>
           <div class="grid-item">Resultado 2</div>
-          <div class="grid-item">Resultado 3</div>
+          <div class="grid-item">Resultado 3</div> */}
+          {showResultados()}
         </div>
         <br />
         <div class="divCerrarSesion">
