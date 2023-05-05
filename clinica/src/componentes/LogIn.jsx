@@ -2,7 +2,6 @@ import React, { useState, useContext } from "react";
 import { Navigate } from "react-router-dom";
 import UserContext from "../context/UserContext";
 import logoClinica from "../img/logoClinica.png";
-import "../css/CSSGeneral.css";
 
 function Login() {
   const [usuarix, setUsuarix] = useState("");
@@ -16,10 +15,10 @@ function Login() {
     setUsuarix(valorUsuarix);
 
     if (valorUsuarix === "Jessica") {
-      setTipoUsuarix("admin");
+      setTipoUsuarix("Admin");
       setUsuarix("Jessica");
     } else if (valorUsuarix === "Mike") {
-      setTipoUsuarix("estudiante");
+      setTipoUsuarix("Est");
       setUsuarix("Mike");
     } else {
     }
@@ -30,16 +29,24 @@ function Login() {
     });
   }
 
-  if (tipoU === "admin") {
-    console.log("hi!");
+  if (tipoU === "Admin") {
     return <Navigate to={`/PortalAdmin/${usuarix}`} />;
-  } else if (tipoU === "estudiante") {
+  } else if (tipoU === "Est") {
     return <Navigate to={`/PortalEst/${usuarix}`} />;
   }
 
   return (
     <>
-      <div>
+      <head>
+        <link
+          href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css"
+          rel="stylesheet"
+          integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ"
+          crossorigin="anonymous"
+        />
+        <link href="../css/CSSGeneral.css" rel="stylesheet" />
+      </head>
+      <body>
         <img src={logoClinica} alt="Logo de la clinica" />
         <h1>Inicio de sesión</h1>
         <main className="form-signin">
@@ -80,7 +87,7 @@ function Login() {
             </p>
           </form>
         </main>
-      </div>
+      </body>
     </>
   );
 }

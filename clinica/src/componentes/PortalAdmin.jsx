@@ -1,7 +1,7 @@
 import React, { useState, useContext } from "react";
 import { Navigate } from "react-router-dom";
 import UserContext from "../context/UserContext";
-import "../css/CSSGeneral.css";
+//import "../css/CSSGeneral.css";
 
 const PortalAdmin = () => {
   const { userInfo } = useContext(UserContext);
@@ -21,10 +21,16 @@ const PortalAdmin = () => {
     setRedireccion("CrearCaso");
   }
 
+  function aBuscarCaso() {
+    setRedireccion("BuscarCaso");
+  }
+
   if (redireccion === "CerrarSesion") {
     return <Navigate to="/" />;
   } else if (redireccion === "CrearCaso") {
     return <Navigate to="/NuevoCaso" />;
+  } else if (redireccion === "BuscarCaso") {
+    return <Navigate to="/BuscarCaso" />;
   }
   //mantener el userInfo en cache para no perderlo cuando se haga refresh
 
@@ -48,7 +54,11 @@ const PortalAdmin = () => {
           >
             Crear caso
           </button>
-          <button className="inline" id="btnBuscarCasoPortalAdmin">
+          <button
+            className="inline"
+            id="btnBuscarCasoPortalAdmin"
+            onClick={aBuscarCaso}
+          >
             Buscar caso
           </button>
           <div className="divCerrarSesion">
