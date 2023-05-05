@@ -8,42 +8,37 @@
 <html>
 <head>
 	<title>Versiones finales</title>
+	<link href="CSSGeneral.css" rel="stylesheet">
 </head>
 <body>
-	<h1>Versiones finales</h1>
+	<header>
+		<div>
+			<h1>Versiones finales</h1>
+		</div>
+	  </header>
 
 	<button type="button" id="bSubirVersionFinal" >Subir Versión Final</button>
-	<button type="button" id="btRegresarCaso" >Regresar al Caso</button>
-	<button type="button" id="btRegresarPortal" >Regresar al Portal</button>
 
-	<br><br>
+	<div class="divVersionFinal">
+		<div class="Uno"><h2>Versión final caso 1</h2></div>
+		<div class="subuno"><a href="#">Documento final - caso 1</a></div>
+		<div class="subuno2"><button class="cerrar_sesion_button" type="button" id="btDescargaVersionFinal1" >Descargar</button></div>
+		<div class="dos"><h2>Versión final del caso 2</h2></div>
+		<div class="subdos"><a href="#">Documento final - caso 2</a></div>
+		<div class="subdos2"><button class="cerrar_sesion_button" type="button" id="btDescargaVersionFinal2" >Descargar</button></div>
+		<div class="tres"><h2>Versión final del caso 3</h2></div>
+		<div class="subtres"><a href="#">Documento final - caso 3</a></div>
+		<div class="subtres2"><button class="cerrar_sesion_button" type="button" id="btDescargaVersionFinal3">Descargar</button></div>
+		<div class="cuatro"><h2>Versión final del caso 4</h2></div>
+		<div class="subcuatro"><a href="#">Documento final - caso 4</a></div>
+		<div class="subcuatro2"><button class="cerrar_sesion_button" type="button" id="btDescargaVersionFinal4">Descargar</button></div>
+	  </div>
 
-	<table>
-		<tr>
-			<td>
-				<h2>Versión final del caso 1</h2>
-				<a href="#">Documento final - caso 1</a>
-				<button type="button" id="btDescargaVersionFinal1" >Descargar</button>
-			</td>
-			<td>
-				<h2>Versión final del caso 2</h2>
-				<a href="#">Documento final - caso 2</a>
-				<button type="button" id="btDescargaVersionFinal2" >Descargar</button>
-			</td>
-		</tr>
-		<tr>
-			<td>
-				<h2>Versión final del caso 3</h2>
-				<a href="#">Documento final - caso 3</a>
-				<button type="button" id="btDescargaVersionFinal3">Descargar</button>
-			</td>
-			<td>
-				<h2>Versión final del caso 4</h2>
-				<a href="#">Documento final - caso 4</a>
-				<button type="button" id="btDescargaVersionFinal4">Descargar</button>
-			</td>
-		</tr>
-	</table>
-	<footer>Derechos reservados Linces 2023</footer>
+
+    <div class="divCerrarSesion">
+		<button class="cerrar_sesion_button" type="button" id="btRegresaPortal">Regresar al Portal</button>
+		<button class="cerrar_sesion_button" type="button" id="btRegresarCaso" >Regresar al Caso</button>
+	  </div>
+	<p class="mt-5 mb-3 text-body-secondary">&copy; Derechos reservados Linces 2023</p>
 </body>
 </html>

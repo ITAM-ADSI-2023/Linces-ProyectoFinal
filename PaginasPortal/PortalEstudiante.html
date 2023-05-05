@@ -9,22 +9,23 @@
   <head>
     <meta charset="UTF-8">
       <title>Bienvenidx a tu portal</title>
+      <link href="CSSGeneral.css" rel="stylesheet">
   </head>
   <body> 
     <header>
+      <div class="div_header">
         <h1>Bienvenidx, [nombre del usuario]</h1>
+      </div>
     </header>
 
     <main>
       <div>
         <button id="btnBuscarCasoPortalEstudiante">Buscar caso</button>
-        <br>
-        <button id="btnCerrarSesionPortalEstudiante">Cerrar sesión</button>
-        <br>
+        
       </div>
-
-      <div>
-        <h2>Lista de Tareas</h2>
+      <h2>Lista de Tareas</h2>
+      <div class="divLista">
+        
         <ul id="listaTareasPortalEstudiante">
           <li>Tarea 1</li>
           <li>Tarea 2</li>
@@ -32,9 +33,12 @@
         </ul>
       </div>
 
+      <div class = "divCerrarSesion">
+        <button class="cerrar_sesion_button" id="btnCerrarSesionPortalEstudiante">Cerrar sesión</button>
+      </div>
 
+      <p class="mt-5 mb-3 text-body-secondary">&copy; Derechos reservados Linces 2023</p>
     </main>
 
-    <footer>Derechos reservados Linces 2023</footer>
   </body>
 </html>
