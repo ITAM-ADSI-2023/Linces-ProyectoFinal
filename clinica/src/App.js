@@ -30,7 +30,11 @@ function App() {
       fecha: "01/04/2023",
       tareas: [
         {
-          nombre: "Tarea1",
+          caso: "A.S.",
+          estatus: "InvestigacionTribunales",
+          estudiante: "Mike",
+          fecha: "01/04/2023",
+          nota: "Tarea 1 correspondiente al caso 'Ana Sánchez vs. marido'",
         },
         {
           nombre: "Tarea2",
@@ -50,7 +54,11 @@ function App() {
           nombre: "Tarea1",
         },
         {
-          nombre: "Tarea2",
+          caso: "M.G.",
+          estatus: "InvestigacionTribunales",
+          estudiante: "Mike",
+          fecha: "01/04/2023",
+          nota: "Tarea 1 correspondiente al caso de Laura Rodriguez",
         },
       ],
     },
@@ -138,7 +146,7 @@ function App() {
             <Route path="/PortalEst/:id" element={<PortalEst />} />
             <Route path="/NuevoCaso" element={<CrearCaso />} />
             <Route path="/BuscarCaso" element={<BuscarCaso />} />
-            <Route path="/AgregarTareas/:idCaso" element={<AgregarTarea />} />
+            <Route path="/AgregarTareas/:id" element={<AgregarTarea />} />
             <Route path="/DetallesCaso/:id" element={<DetallesCaso />} />
             <Route path="/InfoCaso" element={<InfoCaso />} />
           </Routes>

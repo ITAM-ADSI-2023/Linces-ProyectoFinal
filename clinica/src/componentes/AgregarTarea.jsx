@@ -1,8 +1,9 @@
 import React, { useState, useContext } from "react";
 import { useParams, Link } from "react-router-dom";
-import "../css/CSSGeneral.css";
 import UserContext from "../context/UserContext";
 import CasosContext from "../context/CasoContext";
+import { useEffect } from "react";
+import "../css/CSSGeneral.css";
 
 const AgregarTarea = () => {
   const params = useParams();
@@ -12,26 +13,37 @@ const AgregarTarea = () => {
 
   const [estudiante, setEstudiante] = useState("");
   const [fecha, setFecha] = useState("");
-  const [estatus, setEstatus] = useState("");
+  const [nombreCaso, setNombreCaso] = useState("");
+  const [estatusCaso, setEstatusCaso] = useState("");
   const [nota, setNota] = useState("");
 
+  useEffect(() => {
+    for (let i = 0; i < casos.length; i++) {
+      if (casos[i].iniciales == params.id) {
+        setNombreCaso(casos[i].nombre);
+        setEstatusCaso(casos[i].estado);
+      }
+    }
+  });
+
   const addTarea = () => {
-    console.log(casos);
+    let newCasos = casos;
 
     const newTarea = {
       estudiante: estudiante,
       fecha: fecha,
-      caso: params.idCaso,
-      estatus: estatus,
+      caso: params.id,
+      estatus: estatusCaso,
       nota: nota,
     };
 
-    let newCasos = casos;
     for (let i = 0; i < casos.length; i++) {
-      if (newCasos[i].nombre === params.idCaso) {
+      if (newCasos[i].iniciales === params.id) {
         newCasos[i].tareas.push(newTarea);
       }
     }
+
+    setCasos(newCasos);
   };
 
   return (
@@ -81,7 +93,7 @@ const AgregarTarea = () => {
             name="caso"
             disabled
           >
-            <option value={`${params.idCaso}`}>{params.idCaso}</option>
+            <option value={`${nombreCaso}`}>{nombreCaso}</option>
             {/* {getCasos()} */}
           </select>
         </div>
@@ -94,12 +106,32 @@ const AgregarTarea = () => {
             class="selectsCrear"
             id="estatusAgregarTarea"
             name="estatus"
-            onChange={(e) => setEstatus(e.target.value)}
+            onChange={(e) => setEstatusCaso(e.target.value)}
           >
-            <option value=""></option>
-            <option value="opcion1">Opcion 1</option>
-            <option value="opcion2">Opcion 2</option>
-            <option value="opcion3">Opcion 3</option>
+            <option
+              selected={estatusCaso === "InvestigacionAbogadxs"}
+              value="InvestigacionAbogadxs"
+            >
+              Investigación abogadxs
+            </option>
+            <option
+              selected={estatusCaso === "SinPresentar"}
+              value="SinPresentar"
+            >
+              Sin presentar
+            </option>
+            <option
+              selected={estatusCaso === "InicioDemanda"}
+              value="InicioDemanda"
+            >
+              Inicio de la demanda
+            </option>
+            <option
+              selected={estatusCaso === "InvestigacionTribunales"}
+              value="InvestigacionTribunales"
+            >
+              Investigación tribunales
+            </option>
           </select>
         </div>
       </form>
@@ -121,7 +153,7 @@ const AgregarTarea = () => {
       </div>
 
       <div class="divCerrarSesion">
-        <Link to={`/DetallesCaso/${params.idCaso}`}>
+        <Link to={`/DetallesCaso/${params.id}`}>
           <button
             class="cerrar_sesion_button"
             type="button"
@@ -131,7 +163,7 @@ const AgregarTarea = () => {
           </button>
         </Link>
 
-        <Link to={`/PortalAdmin/${userInfo.name}`}>
+        <Link to={`/PortalAdmin/${userInfo.nombre}`}>
           <button
             class="cerrar_sesion_button"
             type="button"

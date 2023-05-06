@@ -1,5 +1,5 @@
 import React, { useState, useContext, useEffect } from "react";
-import { Navigate } from "react-router-dom";
+import { Link, Navigate } from "react-router-dom";
 import UserContext from "../context/UserContext";
 import CasosContext from "../context/CasoContext";
 import "../css/CSSGeneral.css";
@@ -7,7 +7,7 @@ import "../css/CSSGeneral.css";
 const BuscarCaso = () => {
   //Contextos
   const { userInfo } = useContext(UserContext);
-  const { casos, setCasos } = useContext(CasosContext);
+  const { casos } = useContext(CasosContext);
 
   //Estados para manejar la redirección de páginas
   const [usuarix, setUsuarix] = useState("");
@@ -24,14 +24,16 @@ const BuscarCaso = () => {
   const showResultados = () => {
     const listaResultados = [];
 
-    console.log(casos);
+    console.log(userInfo);
 
     for (let i = 0; i < casos.length; i++) {
       if (filtroNombre === "" || filtroNombre === casos[i].nombre) {
         if (filtroTipo === "" || filtroTipo === casos[i].tipoDeCaso) {
           if (filtroEstado === "" || filtroEstado === casos[i].estado) {
             listaResultados.push(
-              <div class="grid-item">{casos[i].nombre}</div>
+              <Link to={`/DetallesCaso/${casos[i].iniciales}`}>
+                <div class="grid-item">{casos[i].nombre}</div>
+              </Link>
             );
           }
         }
@@ -46,10 +48,14 @@ const BuscarCaso = () => {
     showResultados();
   }, [filtroEstado, filtroIniciales, filtroTipo]);
 
+  useEffect(() => {
+    setUsuarix(userInfo.nombre);
+  });
+
   function aPortal() {
-    setRedireccion(true);
-    setUsuarix(userInfo.name);
-    setTipo(userInfo.tipo);
+    // setRedireccion(true);
+    // setUsuarix(userInfo.name);
+    // setTipo(userInfo.tipo);
   }
 
   if (redireccion) {
@@ -126,9 +132,17 @@ const BuscarCaso = () => {
         </div>
         <br />
         <div class="divCerrarSesion">
-          <button class="cerrar_sesion_button" onClick={aPortal}>
-            Regresar
-          </button>
+          <Link
+            to={
+              userInfo.tipo === "Est"
+                ? `/PortalEst/${userInfo.nombre}`
+                : `/PortalAdmin/${userInfo.nombre}`
+            }
+          >
+            <button class="cerrar_sesion_button" onClick={aPortal}>
+              Regresar
+            </button>
+          </Link>
         </div>
 
         <p class="mt-5 mb-3 text-body-secondary">

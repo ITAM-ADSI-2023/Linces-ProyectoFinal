@@ -1,10 +1,14 @@
 import React, { useState, useContext } from "react";
 import { Navigate } from "react-router-dom";
 import UserContext from "../context/UserContext";
+import CasosContext from "../context/CasoContext";
 import "../css/CSSGeneral.css";
+import { useEffect } from "react";
 
 const PortalEst = () => {
   const { userInfo } = useContext(UserContext);
+  const { casos } = useContext(CasosContext);
+
   const [redireccion, setRedireccion] = useState("");
 
   function cerrarSesion() {
@@ -15,6 +19,19 @@ const PortalEst = () => {
       setRedireccion("CerrarSesion");
     }
   }
+
+  const showResultados = () => {
+    const listaTareas = [];
+    for (let i = 0; i < casos.length; i++) {
+      for (let j = 0; j < casos[i].tareas.length; j++) {
+        if (casos[i].tareas[j].estudiante === userInfo.nombre) {
+          listaTareas.push(<li>{casos[i].tareas[j].nota}</li>);
+        }
+      }
+    }
+
+    return listaTareas;
+  };
 
   function aBuscarCaso() {
     setRedireccion("BuscarCaso");
@@ -45,12 +62,9 @@ const PortalEst = () => {
             </button>
           </div>
           <h2>Lista de Tareas</h2>
+
           <div className="divLista">
-            <ul id="listaTareasPortalEstudiante">
-              <li>Tarea 1</li>
-              <li>Tarea 2</li>
-              <li>Tarea 3</li>
-            </ul>
+            <ul id="listaTareasPortalEstudiante">{showResultados()}</ul>
           </div>
 
           <div className="divCerrarSesion">
