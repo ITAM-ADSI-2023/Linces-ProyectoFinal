@@ -30,7 +30,11 @@ function App() {
       fecha: "01/04/2023",
       tareas: [
         {
-          nombre: "Tarea1",
+          caso: "A.S.",
+          estatus: "InvestigacionTribunales",
+          estudiante: "Mike",
+          fecha: "01/04/2023",
+          nota: "Hacer la tarea 1 bien",
         },
         {
           nombre: "Tarea2",
@@ -50,7 +54,11 @@ function App() {
           nombre: "Tarea1",
         },
         {
-          nombre: "Tarea2",
+          caso: "M.G.",
+          estatus: "InvestigacionTribunales",
+          estudiante: "Mike",
+          fecha: "01/04/2023",
+          nota: "Hacer la tarea 2 MG bien",
         },
       ],
     },
