@@ -34,7 +34,7 @@ function App() {
           estatus: "InvestigacionTribunales",
           estudiante: "Mike",
           fecha: "01/04/2023",
-          nota: "Hacer la tarea 1 bien",
+          nota: "Tarea 1 correspondiente al caso 'Ana Sánchez vs. marido'",
         },
         {
           nombre: "Tarea2",
@@ -58,7 +58,7 @@ function App() {
           estatus: "InvestigacionTribunales",
           estudiante: "Mike",
           fecha: "01/04/2023",
-          nota: "Hacer la tarea 2 MG bien",
+          nota: "Tarea 1 correspondiente al caso de Laura Rodriguez",
         },
       ],
     },
