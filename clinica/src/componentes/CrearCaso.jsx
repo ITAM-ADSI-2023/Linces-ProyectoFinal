@@ -72,11 +72,11 @@ const CrearCaso = () => {
     setUsuarix(userInfo.nombre);
   });
 
-  // if (redireccion === "RegresarPortal") {
-  //   // return <Navigate to={`/PortalAdmin/${usuarix}`} />;
-  // } else if (redireccion === "CrearCaso") {
-  //   return <Navigate to={`/DetallesCaso/${iniciales}`} />;
-  // }
+  if (redireccion === "RegresarPortal") {
+    // return <Navigate to={`/PortalAdmin/${usuarix}`} />;
+  } else if (redireccion === "CrearCaso") {
+    return <Navigate to={`/DetallesCaso/${iniciales}`} />;
+  }
 
   return (
     <>
