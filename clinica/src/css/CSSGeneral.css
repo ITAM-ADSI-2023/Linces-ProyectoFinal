@@ -391,3 +391,10 @@ input {
 #btnAgregarTarea {
   margin-top: 15px;
 }
+
+#descCaso {
+  width: 800px;
+  text-align: justify;
+  margin: auto;
+  margin-bottom: 15px;
+}
