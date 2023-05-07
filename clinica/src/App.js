@@ -30,14 +30,11 @@ function App() {
       fecha: "01/04/2023",
       tareas: [
         {
-          caso: "A.S.",
-          estatus: "InvestigacionTribunales",
+          titulo: "Investigacion",
           estudiante: "Mike",
           fecha: "01/04/2023",
-          nota: "Tarea 1 correspondiente al caso 'Ana Sánchez vs. marido'",
-        },
-        {
-          nombre: "Tarea2",
+          estatus: "InvestigacionTribunales",
+          nota: "Antecedentes marido",
         },
       ],
     },
@@ -45,40 +42,38 @@ function App() {
       nombre: "Laura Rodríguez vs. trabajo por embarazo",
       iniciales: "M.G.",
       descripcionDelCaso:
-        " Laura Rodríguez es una mujer de 40 años que ha sido despedida de su trabajo después de quedar embarazada. Laura había trabajado en la empresa por más de 5 años y había sido promovida a un puesto de gerencia. Sin embargo, después de informar a su supervisor sobre su embarazo, comenzó a recibir un trato hostil. Finalmente, fue despedida por supuesto 'bajo rendimiento' en su desempeño laboral.",
+        "Laura Rodríguez es una mujer de 40 años que ha sido despedida de su trabajo después de quedar embarazada. Laura había trabajado en la empresa por más de 5 años y había sido promovida a un puesto de gerencia. Sin embargo, después de informar a su supervisor sobre su embarazo, comenzó a recibir un trato hostil. Finalmente, fue despedida por supuesto 'bajo rendimiento' en su desempeño laboral.",
       tipoDeCaso: "Discriminacion",
       estado: "InvestigacionTribunales",
       fecha: "05/01/2021",
       tareas: [
         {
-          nombre: "Tarea1",
-        },
-        {
-          caso: "M.G.",
-          estatus: "InvestigacionTribunales",
-          estudiante: "Mike",
-          fecha: "01/04/2023",
-          nota: "Tarea 1 correspondiente al caso de Laura Rodriguez",
+          titulo: "Casos similares",
+          estudiante: "Rachel",
+          fecha: "04/03/2023",
+          estatus: "InvestigacionAbogadxs",
+          nota: "Analisis de casos anteriores de la empresa",
         },
       ],
     },
-    {
-      nombre: "María González vs. trabajo",
-      iniciales: "M.G.",
-      descripcionDelCaso:
-        "María González es una mujer trans de 26 años que ha sido víctima de acoso sexual en su lugar de trabajo. Desde que se unió a la empresa hace un año, ha sido objeto de comentarios y tocamientos inapropiados por parte de su supervisor. María ha intentado evitar a su supervisor y ha reportado su comportamiento al departamento de recursos humanos, pero no ha recibido una respuesta adecuada.",
-      tipoDeCaso: "Acoso",
-      estado: "InicioDemanda",
-      fecha: "15/03/2022",
-      tareas: [
-        {
-          nombre: "Tarea1",
-        },
-        {
-          nombre: "Tarea2",
-        },
-      ],
-    },
+    // {
+    //   nombre: "María González vs. trabajo",
+    //   iniciales: "M.G.",
+    //   descripcionDelCaso:
+    //     "María González es una mujer trans de 26 años que ha sido víctima de acoso sexual en su lugar de trabajo. Desde que se unió a la empresa hace un año, ha sido objeto de comentarios y tocamientos inapropiados por parte de su supervisor. María ha intentado evitar a su supervisor y ha reportado su comportamiento al departamento de recursos humanos, pero no ha recibido una respuesta adecuada.",
+    //   tipoDeCaso: "Acoso",
+    //   estado: "InicioDemanda",
+    //   fecha: "15/03/2022",
+    //   tareas: [
+    //     {
+    //       titulo: "Ministerio Público",
+    //       estudiante: "Mike",
+    //       fecha: "04/06/2023",
+    //       estatus: "InvestigacionTribunales",
+    //       nota: "Realizar estructura amparo",
+    //     },
+    //   ],
+    // },
     {
       nombre: "Laura Gomez vs. trabajo",
       iniciales: "L.G.C.",
@@ -89,10 +84,11 @@ function App() {
       fecha: "15/06/2020",
       tareas: [
         {
-          nombre: "Tarea1",
-        },
-        {
-          nombre: "Tarea2",
+          titulo: "Ministerio Público",
+          estudiante: "Mike",
+          fecha: "02/05/2023",
+          estatus: "InicioDemanda",
+          nota: "Realizar estructura demanda",
         },
       ],
     },
@@ -104,14 +100,7 @@ function App() {
       tipoDeCaso: "Acoso",
       estado: "SinPresentar",
       fecha: "03/03/2023",
-      tareas: [
-        {
-          nombre: "Tarea1",
-        },
-        {
-          nombre: "Tarea2",
-        },
-      ],
+      tareas: [],
     },
     {
       nombre: "Alan vs. policia",
@@ -121,14 +110,7 @@ function App() {
       tipoDeCaso: "Discriminacion",
       estado: "InvestigacionTribunales",
       fecha: "21/02/2023",
-      tareas: [
-        {
-          nombre: "Tarea1",
-        },
-        {
-          nombre: "Tarea2",
-        },
-      ],
+      tareas: [],
     },
   ]);
 

@@ -11,10 +11,11 @@ const CasoContext = createContext({
       fecha: "",
       tareas: [
         {
-          nombre: "Tarea1",
-        },
-        {
-          nombre: "Tarea2",
+          titulo: "",
+          estudiante: "",
+          fecha: "",
+          estatus: "",
+          nota: "",
         },
       ],
     },

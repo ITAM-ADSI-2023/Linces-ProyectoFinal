@@ -11,6 +11,7 @@ const AgregarTarea = () => {
   const { userInfo } = useContext(UserContext);
   const { casos, setCasos } = useContext(CasosContext);
 
+  const [titulo, setTitulo] = useState("");
   const [estudiante, setEstudiante] = useState("");
   const [fecha, setFecha] = useState("");
   const [nombreCaso, setNombreCaso] = useState("");
@@ -30,6 +31,7 @@ const AgregarTarea = () => {
     let newCasos = casos;
 
     const newTarea = {
+      titulo: titulo,
       estudiante: estudiante,
       fecha: fecha,
       caso: params.id,
@@ -44,6 +46,7 @@ const AgregarTarea = () => {
     }
 
     setCasos(newCasos);
+    alert("Se agregó una nueva tarea");
   };
 
   return (
@@ -51,6 +54,18 @@ const AgregarTarea = () => {
       <h2>Agregar Tarea</h2>
 
       <form class="formAgregarTarea">
+        <div>
+          <label for="estudiante">Titulo tarea:</label>
+        </div>
+        <div>
+          <input
+            class="selectsCrear"
+            id="tituloAgregarTarea"
+            name="titulo"
+            onChange={(e) => setTitulo(e.target.value)}
+          ></input>
+        </div>
+
         <div>
           <label for="estudiante">
             Estudiante al que se le asigna el caso:
@@ -65,8 +80,7 @@ const AgregarTarea = () => {
           >
             <option value=""></option>
             <option value="Mike">Mike</option>
-            <option value="Troy">Troy</option>
-            <option value="Sharpay">Sharpay</option>
+            <option value="Rachel">Rachel</option>
           </select>
         </div>
 

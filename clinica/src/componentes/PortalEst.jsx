@@ -30,7 +30,12 @@ const PortalEst = () => {
       }
     }
 
-    return listaTareas;
+    if (listaTareas.length === 0) {
+      return "No hay tareas";
+    } else {
+      return listaTareas;
+    }
+    //return listaTareas;
   };
 
   function aBuscarCaso() {

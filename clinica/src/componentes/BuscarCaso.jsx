@@ -24,10 +24,11 @@ const BuscarCaso = () => {
   const showResultados = () => {
     const listaResultados = [];
 
-    console.log(userInfo);
-
     for (let i = 0; i < casos.length; i++) {
-      if (filtroNombre === "" || filtroNombre === casos[i].nombre) {
+      if (
+        filtroNombre === "" ||
+        casos[i].nombre.toUpperCase().includes(filtroNombre.toUpperCase())
+      ) {
         if (filtroTipo === "" || filtroTipo === casos[i].tipoDeCaso) {
           if (filtroEstado === "" || filtroEstado === casos[i].estado) {
             listaResultados.push(
@@ -53,14 +54,14 @@ const BuscarCaso = () => {
   });
 
   function aPortal() {
-    // setRedireccion(true);
-    // setUsuarix(userInfo.name);
-    // setTipo(userInfo.tipo);
+    setRedireccion(true);
+    setUsuarix(userInfo.name);
+    setTipo(userInfo.tipo);
   }
 
-  if (redireccion) {
-    return <Navigate to={`/Portal${tipo}/${usuarix}`} />;
-  }
+  // if (redireccion) {
+  //   return <Navigate to={`/Portal${tipo}/${usuarix}`} />;
+  // }
 
   return (
     <>
@@ -78,7 +79,7 @@ const BuscarCaso = () => {
               placeholder="Buscar..."
               onChange={(e) => setFiltroNombre(e.target.value)}
             />
-            <button type="submit">Buscar</button>
+            <button type="submit">Resetear</button>
           </form>
         </div>
         <br />
@@ -95,7 +96,7 @@ const BuscarCaso = () => {
             <option value="Discriminacion">Discriminación</option>
             <option value="Acoso">Acoso</option>
           </select>
-          <label for="nombreIn">Nombre/iniciales:</label>
+          {/* <label for="nombreIn">Nombre/iniciales:</label>
           <select
             class="selectsBuscar"
             id="nombreInBusquedaCaso"
@@ -106,7 +107,7 @@ const BuscarCaso = () => {
             <option value="opcion1">Opcion 1</option>
             <option value="opcion2">Opcion 2</option>
             <option value="opcion3">Opcion 3</option>
-          </select>
+          </select> */}
           <label for="estado">Estado:</label>
           <select
             class="selectsBuscar"

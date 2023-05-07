@@ -39,7 +39,6 @@ const DetallesCaso = () => {
         for (let j = 0; j < casos[i].tareas.length; j++) {
           listaTareas.push(
             <>
-              <h3>Tarea {j + 1}</h3>
               <div>
                 <div>
                   <label for="titulo">Título de la tarea:</label>
@@ -49,7 +48,8 @@ const DetallesCaso = () => {
                   type="text"
                   id="tituloTarea"
                   name="titulo"
-                  value={`${casos[i].nombre} - ${j}`}
+                  readOnly
+                  value={`${casos[i].tareas[j].titulo}`}
                 />
               </div>
               <div>
@@ -61,6 +61,7 @@ const DetallesCaso = () => {
                   type="text"
                   id="asignado"
                   name="asignado"
+                  readOnly
                   value={`${casos[i].tareas[j].estudiante}`}
                 />
               </div>
@@ -70,9 +71,10 @@ const DetallesCaso = () => {
                 </div>
                 <input
                   class="selectsCrear"
-                  type="date"
+                  type="text"
                   id="fechaEntrega"
                   name="fecha"
+                  readOnly
                   value={`${casos[i].tareas[j].fecha}`}
                 />
               </div>
@@ -85,6 +87,7 @@ const DetallesCaso = () => {
                   type="text"
                   id="estatus"
                   name="estatus"
+                  readOnly
                   value={`${casos[i].tareas[j].estatus}`}
                 />
               </div>
@@ -97,6 +100,7 @@ const DetallesCaso = () => {
                   type="text"
                   id="nota"
                   name="nota"
+                  readOnly
                   value={`${casos[i].tareas[j].nota}`}
                 />
               </div>
@@ -183,19 +187,9 @@ const DetallesCaso = () => {
       </div>
 
       <div class="divCerrarSesion">
-        <Link
-          to={
-            userInfo.tipo === "Est"
-              ? `/PortalEst/${userInfo.nombre}`
-              : `/PortalAdmin/${userInfo.nombre}`
-          }
-        >
-          <button
-            class="cerrar_sesion_button"
-            type="button"
-            id="btRegresaPortal"
-          >
-            Regresar al Portal
+        <Link to="/BuscarCaso">
+          <button class="cerrar_sesion_button" type="button" id="btRegresa">
+            Regresar
           </button>
         </Link>
 
