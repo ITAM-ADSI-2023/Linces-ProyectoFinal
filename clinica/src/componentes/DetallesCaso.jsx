@@ -18,6 +18,7 @@ const DetallesCaso = () => {
   // const [usuarix, setUsuarix] = useState("");
 
   const [nombreCaso, setNombreCaso] = useState("");
+  const [descCaso, setDescCaso] = useState("");
   const [estatusCaso, setEstatusCaso] = useState("");
 
   useEffect(() => {
@@ -25,11 +26,13 @@ const DetallesCaso = () => {
       if (casos[i].iniciales == params.id) {
         setNombreCaso(casos[i].nombre);
         setEstatusCaso(casos[i].estado);
+        setDescCaso(casos[i].descripcionDelCaso);
       }
     }
   });
 
   const createListaTareas = () => {
+    console.log({ descCaso });
     let listaTareas = [];
 
     for (let i = 0; i < casos.length; i++) {
@@ -123,7 +126,7 @@ const DetallesCaso = () => {
       </header>
 
       <h2>Descripción del caso</h2>
-      <p>En esta seccion se describe el caso en cuestion.</p>
+      <p id="descCaso">{descCaso}</p>
 
       <div>
         <form>
