@@ -19,7 +19,11 @@ function Login() {
       setTipoUsuarix("Admin");
       tipo = "Admin";
       setUsuarix("Jessica");
-    } else if (valorUsuarix === "Mike") {
+    } else if (
+      valorUsuarix === "Mike" ||
+      valorUsuarix === "Rachel" ||
+      valorUsuarix === "Harold"
+    ) {
       setTipoUsuarix("Est");
       tipo = "Est";
       setUsuarix("Mike");

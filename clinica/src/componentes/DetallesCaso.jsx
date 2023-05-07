@@ -30,8 +30,6 @@ const DetallesCaso = () => {
   });
 
   const createListaTareas = () => {
-    console.log(casos);
-
     let listaTareas = [];
 
     for (let i = 0; i < casos.length; i++) {
@@ -109,8 +107,11 @@ const DetallesCaso = () => {
         }
       }
     }
-
-    return listaTareas;
+    if (listaTareas.length === 0) {
+      return "No hay tareas";
+    } else {
+      return listaTareas;
+    }
   };
 
   return (

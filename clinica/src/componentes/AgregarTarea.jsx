@@ -30,23 +30,34 @@ const AgregarTarea = () => {
   const addTarea = () => {
     let newCasos = casos;
 
-    const newTarea = {
-      titulo: titulo,
-      estudiante: estudiante,
-      fecha: fecha,
-      caso: params.id,
-      estatus: estatusCaso,
-      nota: nota,
-    };
+    if (
+      titulo != "" &&
+      estudiante != "" &&
+      fecha != "" &&
+      nombreCaso != "" &&
+      estatusCaso != "" &&
+      nota != ""
+    ) {
+      const newTarea = {
+        titulo: titulo,
+        estudiante: estudiante,
+        fecha: fecha,
+        caso: params.id,
+        estatus: estatusCaso,
+        nota: nota,
+      };
 
-    for (let i = 0; i < casos.length; i++) {
-      if (newCasos[i].iniciales === params.id) {
-        newCasos[i].tareas.push(newTarea);
+      for (let i = 0; i < casos.length; i++) {
+        if (newCasos[i].iniciales === params.id) {
+          newCasos[i].tareas.push(newTarea);
+        }
       }
-    }
 
-    setCasos(newCasos);
-    alert("Se agregó una nueva tarea");
+      setCasos(newCasos);
+      alert("Se agregó una nueva tarea");
+    } else {
+      alert("Se necesita llenar toda la informacion para crear una tarea");
+    }
   };
 
   return (
