@@ -19,7 +19,11 @@ function Login() {
       setTipoUsuarix("Admin");
       tipo = "Admin";
       setUsuarix("Jessica");
-    } else if (valorUsuarix === "Mike") {
+    } else if (
+      valorUsuarix === "Mike" ||
+      valorUsuarix === "Rachel" ||
+      valorUsuarix === "Harold"
+    ) {
       setTipoUsuarix("Est");
       tipo = "Est";
       setUsuarix("Mike");
@@ -47,10 +51,11 @@ function Login() {
           integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ"
           crossorigin="anonymous"
         />
-        <link href="../css/CSSGeneral.css" rel="stylesheet" />
+        <link href="bootstrap.min.css" rel="stylesheet" />
+        <link href="CSSGeneral.css" rel="stylesheet" />
       </head>
       <body>
-        <img src={logoClinica} alt="Logo de la clinica" />
+        <img class="imgIndex" src={logoClinica} alt="Logo de la clinica" />
         <h1>Inicio de sesión</h1>
         <main className="form-signin">
           <form onSubmit={redirrecion}>

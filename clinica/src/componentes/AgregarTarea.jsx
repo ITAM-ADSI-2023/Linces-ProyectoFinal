@@ -11,6 +11,7 @@ const AgregarTarea = () => {
   const { userInfo } = useContext(UserContext);
   const { casos, setCasos } = useContext(CasosContext);
 
+  const [titulo, setTitulo] = useState("");
   const [estudiante, setEstudiante] = useState("");
   const [fecha, setFecha] = useState("");
   const [nombreCaso, setNombreCaso] = useState("");
@@ -29,21 +30,34 @@ const AgregarTarea = () => {
   const addTarea = () => {
     let newCasos = casos;
 
-    const newTarea = {
-      estudiante: estudiante,
-      fecha: fecha,
-      caso: params.id,
-      estatus: estatusCaso,
-      nota: nota,
-    };
+    if (
+      titulo != "" &&
+      estudiante != "" &&
+      fecha != "" &&
+      nombreCaso != "" &&
+      estatusCaso != "" &&
+      nota != ""
+    ) {
+      const newTarea = {
+        titulo: titulo,
+        estudiante: estudiante,
+        fecha: fecha,
+        caso: params.id,
+        estatus: estatusCaso,
+        nota: nota,
+      };
 
-    for (let i = 0; i < casos.length; i++) {
-      if (newCasos[i].iniciales === params.id) {
-        newCasos[i].tareas.push(newTarea);
+      for (let i = 0; i < casos.length; i++) {
+        if (newCasos[i].iniciales === params.id) {
+          newCasos[i].tareas.push(newTarea);
+        }
       }
-    }
 
-    setCasos(newCasos);
+      setCasos(newCasos);
+      alert("Se agregó una nueva tarea");
+    } else {
+      alert("Se necesita llenar toda la informacion para crear una tarea");
+    }
   };
 
   return (
@@ -51,6 +65,18 @@ const AgregarTarea = () => {
       <h2>Agregar Tarea</h2>
 
       <form class="formAgregarTarea">
+        <div>
+          <label for="estudiante">Titulo tarea:</label>
+        </div>
+        <div>
+          <input
+            class="selectsCrear"
+            id="tituloAgregarTarea"
+            name="titulo"
+            onChange={(e) => setTitulo(e.target.value)}
+          ></input>
+        </div>
+
         <div>
           <label for="estudiante">
             Estudiante al que se le asigna el caso:
@@ -65,8 +91,7 @@ const AgregarTarea = () => {
           >
             <option value=""></option>
             <option value="Mike">Mike</option>
-            <option value="Troy">Troy</option>
-            <option value="Sharpay">Sharpay</option>
+            <option value="Rachel">Rachel</option>
           </select>
         </div>
 
